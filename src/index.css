@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Design tokens extracted from Brainwave.io Figma design */
+@theme {
+  /* Colors */
+  --color-primary: #5454D4;
+  --color-primary-hover: #4242C2;
+  --color-primary-active: #3535A8;
+  --color-dark-navy: #15182B;
+  --color-dark-navy-light: #1D2139;
+  --color-light-gray: #F7F7FB;
+  --color-medium-gray: #E8E8F2;
+  --color-text-primary: #1E1E2F;
+  --color-text-secondary: #6C6C80;
+  --color-text-light: #9494A0;
+  --color-success: #00D46A;
+  --color-warning: #FF8B4D;
+  --color-border: #E8E8F2;
+
+  /* Typography */
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 5rem;
+  --spacing-4xl: 7.5rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.12);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text-primary);
+}
