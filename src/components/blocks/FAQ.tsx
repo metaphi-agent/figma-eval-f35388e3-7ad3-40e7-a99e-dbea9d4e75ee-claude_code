@@ -1,54 +1,61 @@
-export default function FAQ() {
-  const faqs = [
-    {
-      question: 'Can I use Albino for my clients?',
-      answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page quickly and efficiently.',
-      iconColor: 'text-[var(--color-success)]',
-      iconBg: 'bg-[var(--color-success)]/10'
-    },
-    {
-      question: "Don't work with WordPress?",
-      answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page quickly and efficiently.',
-      iconColor: 'text-[var(--color-primary)]',
-      iconBg: 'bg-[var(--color-primary)]/10'
-    },
-    {
-      question: 'Do I get free updates?',
-      answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page quickly and efficiently.',
-      iconColor: 'text-[var(--color-success)]',
-      iconBg: 'bg-[var(--color-success)]/10'
-    },
-    {
-      question: 'Will you provide support?',
-      answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page quickly and efficiently.',
-      iconColor: 'text-[var(--color-warning)]',
-      iconBg: 'bg-[var(--color-warning)]/10'
-    }
-  ];
+const faqs = [
+  {
+    question: 'Can I use Albino for my clients?',
+    answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Integer at Dictum massa. Sed feugiat vitae dolor a contin. Aliquam sagittis interdum Malesuada.',
+    linkText: 'Click to learn more'
+  },
+  {
+    question: 'Does it work with WordPress?',
+    answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Integer at Dictum massa. Sed feugiat vitae dolor a contin. Aliquam sagittis interdum Malesuada.'
+  },
+  {
+    question: 'Do I get free updates?',
+    answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Integer at Dictum massa. Sed feugiat vitae dolor a contin. Aliquam sagittis interdum Malesuada.'
+  },
+  {
+    question: 'Will you provide support?',
+    answer: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Integer at Dictum massa. Sed feugiat vitae dolor a contin. Aliquam sagittis interdum Malesuada.'
+  }
+];
 
+export default function FAQ() {
   return (
-    <section className="bg-[var(--color-dark-navy)] py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="bg-[#161C2D] py-16">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-[var(--color-dark-navy-light)] rounded-2xl p-6">
-              <div className="flex gap-4">
-                <div className={`flex-shrink-0 w-12 h-12 rounded-full ${faq.iconBg} ${faq.iconColor} flex items-center justify-center`}>
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
+            <div key={index} className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#5454D4] flex items-center justify-center">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.5"/>
+                  <path d="M5 7H9M7 5V9" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-3">
+                  {faq.question}
+                </h3>
+                <p className="small-text text-white/70">
+                  {faq.answer}
+                </p>
+                {faq.linkText && (
+                  <a href="#" className="inline-block mt-2 text-[#68D585] text-sm font-medium hover:underline">
+                    {faq.linkText} &rarr;
+                  </a>
+                )}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Contact Support Link */}
+        <div className="text-center mt-12">
+          <p className="text-white/70">
+            Haven't got your answer?{' '}
+            <a href="#" className="text-[#68D585] hover:underline">
+              Contact our support now
+            </a>
+          </p>
         </div>
       </div>
     </section>

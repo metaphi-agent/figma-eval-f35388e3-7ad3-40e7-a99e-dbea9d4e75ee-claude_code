@@ -1,52 +1,142 @@
 @import "tailwindcss";
 
-/* Design tokens extracted from Brainwave.io Figma design */
-@theme {
-  /* Colors */
-  --color-primary: #5454D4;
-  --color-primary-hover: #4242C2;
-  --color-primary-active: #3535A8;
-  --color-dark-navy: #15182B;
-  --color-dark-navy-light: #1D2139;
-  --color-light-gray: #F7F7FB;
-  --color-medium-gray: #E8E8F2;
-  --color-text-primary: #1E1E2F;
-  --color-text-secondary: #6C6C80;
-  --color-text-light: #9494A0;
-  --color-success: #00D46A;
-  --color-warning: #FF8B4D;
-  --color-border: #E8E8F2;
+/* Import Google Fonts - Rubik for logo, Inter as Gilroy fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@700&display=swap');
 
-  /* Typography */
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+/* Design tokens from Figma */
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-logo: 'Rubik', 'Inter', sans-serif;
+
+  /* Colors */
+  --color-primary: #161C2D;
+  --color-secondary: #F5F7FA;
+  --color-background: #FCFDFE;
+  --color-accent: #5454D4;
+  --color-accent-hover: #4343B8;
+  --color-green: #68D585;
+  --color-dark: #161C2D;
 
   /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-  --spacing-3xl: 5rem;
-  --spacing-4xl: 7.5rem;
-
-  /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.12);
+  --container-max: 1110px;
+  --section-spacing: 120px;
 }
 
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--color-text-primary);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+}
+
+/* Custom utilities */
+.container-custom {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.1px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.1px;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-accent);
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 2px solid var(--color-accent);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.1px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Typography */
+.heading-1 {
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+
+.heading-2 {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+
+.heading-3 {
+  font-size: 21px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.body-text {
+  font-size: 19px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+.small-text {
+  font-size: 17px;
+  line-height: 29px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+/* Stat number */
+.stat-number {
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
 }

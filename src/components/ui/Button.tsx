@@ -1,49 +1,40 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'ghost' | 'outline';
-  size?: 'md' | 'lg';
+interface ButtonProps {
   children: ReactNode;
-  isLoading?: boolean;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  onClick?: () => void;
 }
 
 export default function Button({
+  children,
   variant = 'primary',
   size = 'md',
-  children,
   className = '',
-  isLoading = false,
-  disabled,
-  ...props
+  onClick
 }: ButtonProps) {
-  const baseStyles = 'font-medium rounded-lg transition-all duration-150 inline-flex items-center justify-center';
+  const baseClasses = 'inline-flex items-center justify-center font-bold rounded-full transition-all duration-200';
 
-  const variantStyles = {
-    primary: 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)] disabled:opacity-50 disabled:cursor-not-allowed',
-    ghost: 'bg-transparent text-[var(--color-text-primary)] hover:text-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed',
-    outline: 'bg-transparent text-[var(--color-text-primary)] border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] disabled:opacity-50 disabled:cursor-not-allowed'
+  const variantClasses = {
+    primary: 'bg-[#5454D4] text-white hover:bg-[#4343B8] hover:-translate-y-0.5',
+    secondary: 'bg-transparent text-[#161C2D] hover:bg-black/5',
+    outline: 'bg-transparent text-[#5454D4] border-2 border-[#5454D4] hover:bg-[#5454D4] hover:text-white'
   };
 
-  const sizeStyles = {
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+  const sizeClasses = {
+    sm: 'px-5 py-2.5 text-sm',
+    md: 'px-8 py-4 text-[15px]',
+    lg: 'px-10 py-5 text-base'
   };
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-      disabled={disabled || isLoading}
-      {...props}
+      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      onClick={onClick}
     >
-      {isLoading ? (
-        <span className="flex items-center gap-2">
-          <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <span>{children}</span>
-        </span>
-      ) : children}
+      {children}
     </button>
   );
 }

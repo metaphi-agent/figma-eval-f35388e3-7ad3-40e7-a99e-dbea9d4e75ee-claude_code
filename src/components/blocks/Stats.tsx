@@ -1,29 +1,29 @@
-export default function Stats() {
-  const stats = [
-    {
-      value: '1M+',
-      description: 'Companies use Albino more than 100 times in daily life.'
-    },
-    {
-      value: '93%',
-      description: 'Companies see less stress when using with Albino.'
-    },
-    {
-      value: '4.9',
-      description: 'Average customer ratings we have got all over the world.'
-    }
-  ];
+const stats = [
+  {
+    number: '1M+',
+    description: 'Customers visit Albino every months'
+  },
+  {
+    number: '93%',
+    description: 'Satisfaction rate from our customers.'
+  },
+  {
+    number: '4.9',
+    description: 'Average customer ratings out of 5.00!'
+  }
+];
 
+export default function Stats() {
   return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <section className="py-16 border-b border-[#E7E9ED]">
+      <div className="container-custom">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-[var(--color-text-primary)] mb-4">
-                {stat.value}
-              </div>
-              <p className="text-[var(--color-text-secondary)] leading-relaxed">
+            <div key={index} className="flex items-center gap-4">
+              <span className="stat-number text-[#161C2D]">
+                {stat.number}
+              </span>
+              <p className="small-text text-[#161C2D]/70 max-w-[150px]">
                 {stat.description}
               </p>
             </div>

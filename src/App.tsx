@@ -1,28 +1,30 @@
 import Header from './components/blocks/Header';
 import Hero from './components/blocks/Hero';
 import Features from './components/blocks/Features';
-import ContentSection from './components/blocks/ContentSection';
+import Content01 from './components/blocks/Content01';
 import Stats from './components/blocks/Stats';
-import ProjectManagement from './components/blocks/ProjectManagement';
+import Content02 from './components/blocks/Content02';
 import Testimonials from './components/blocks/Testimonials';
 import Pricing from './components/blocks/Pricing';
 import FAQ from './components/blocks/FAQ';
-import FinalCTA from './components/blocks/FinalCTA';
+import CTA from './components/blocks/CTA';
 import Footer from './components/blocks/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FCFDFE]">
       <Header />
-      <Hero />
-      <Features />
-      <ContentSection />
-      <Stats />
-      <ProjectManagement />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <FinalCTA />
+      <main>
+        <Hero />
+        <Features />
+        <Content01 />
+        <Stats />
+        <Content02 />
+        <Testimonials />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </main>
       <Footer />
     </div>
   );

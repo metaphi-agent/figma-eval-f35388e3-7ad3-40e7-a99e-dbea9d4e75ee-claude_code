@@ -1,0 +1,12 @@
+{
+  "figma_file_key": "r54864bDHrDKaUj2blYAYG",
+  "total_frames": 1,
+  "frames": [
+    {
+      "name": "02-SaaS Subscription",
+      "node_id": "0:2385",
+      "gt_image": "../design_exports/0-2385.png",
+      "target_route": "/"
+    }
+  ]
+}

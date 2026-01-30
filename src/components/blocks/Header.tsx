@@ -1,44 +1,39 @@
 import Button from '../ui/Button';
 
 export default function Header() {
+  const navItems = ['Demos', 'Pages', 'Support', 'Contact'];
+
   return (
-    <header className="bg-white border-b border-[var(--color-border)] sticky top-0 z-50">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+    <header className="py-6">
+      <div className="container-custom">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="text-xl font-bold text-[var(--color-text-primary)]">
-              Brainwave.io
-            </a>
-          </div>
+          <a href="/" className="text-2xl font-bold text-[#161C2D]" style={{ fontFamily: 'Rubik, sans-serif' }}>
+            Brainwave.io
+          </a>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#home" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-150">
-              Home
-            </a>
-            <a href="#pages" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-150">
-              Pages
-            </a>
-            <a href="#support" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-150">
-              Support
-            </a>
-            <a href="#contact" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-150">
-              Contact
-            </a>
+          <nav className="hidden md:flex items-center gap-10">
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-[15px] font-bold text-[#161C2D] hover:text-[#5454D4] transition-colors"
+              >
+                {item}
+              </a>
+            ))}
           </nav>
 
           {/* CTA Button */}
-          <div className="flex items-center gap-4">
-            <Button variant="primary" size="md">
-              Get started for free
-            </Button>
-          </div>
+          <Button variant="primary" size="sm">
+            Get started Free
+          </Button>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button className="md:hidden p-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 12h18M3 6h18M3 18h18" />
             </svg>
           </button>
         </div>
